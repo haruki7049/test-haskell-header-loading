@@ -1,0 +1,18 @@
+name: test-haskell-gtk
+
+verbatim:
+  cabal-version: 2.2
+
+dependencies:
+  - base >= 4.7 && < 5
+  - X11
+
+pkg-config-dependencies:
+  - x11
+
+executables:
+  test-haskell-gtk:
+    main: Main.hs
+    source-dirs: src
+    dependencies:
+      - base >= 4.7 && < 5
