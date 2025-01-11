@@ -21,7 +21,7 @@
           overlays = [
             inputs.stacklock2nix.overlay
             (final: prev: {
-              gdhs-stacklock = final.stacklock2nix {
+              test-stacklock = final.stacklock2nix {
                 stackYaml = ./stack.yaml;
                 baseHaskellPkgSet = final.haskell.packages.ghc984;
 
@@ -32,12 +32,16 @@
                     final.pkg-config
                   ];
                   buildInputs = stacklockHaskellPkgSet: [
-                    final.xorg.libX11.dev
+                    final.pkg-config
+                    final.openssl.dev
                   ];
                 };
 
                 additionalHaskellPkgSetOverrides = hfinal: hprev: {
-                  #lens = final.haskell.lib.compose.dontCheck hprev.lens;
+                  prettyprinter = final.haskell.lib.compose.dontCheck hprev.prettyprinter;
+                  text-iso8601 = final.haskell.lib.compose.dontCheck hprev.text-iso8601;
+                  cborg = final.haskell.lib.compose.dontCheck hprev.cborg;
+                  serialise = final.haskell.lib.compose.dontCheck hprev.serialise;
                 };
 
                 all-cabal-hashes = final.fetchurl {
@@ -54,10 +58,10 @@
           };
 
           packages = {
-            default = pkgs.gdhs-stacklock.pkgSet.test-haskell-gtk;
+            default = pkgs.test-stacklock.pkgSet.test-haskell-header-loading;
           };
 
-          devShells.default = pkgs.gdhs-stacklock.devShell;
+          devShells.default = pkgs.test-stacklock.devShell;
         };
     };
 }

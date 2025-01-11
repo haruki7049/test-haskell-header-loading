@@ -3,3 +3,4 @@ resolver: lts-23.3
 nix:
   enable: true
   pure: true
+  shell-file: shell.nix

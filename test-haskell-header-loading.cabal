@@ -4,21 +4,20 @@ cabal-version: 2.2
 --
 -- see: https://github.com/sol/hpack
 
-name:           test-haskell-gtk
+name:           test-haskell-header-loading
 version:        0.0.0
 build-type:     Simple
 
 executable test-haskell-gtk
   main-is: Main.hs
   other-modules:
-      Paths_test_haskell_gtk
+      Paths_test_haskell_header_loading
   autogen-modules:
-      Paths_test_haskell_gtk
+      Paths_test_haskell_header_loading
   hs-source-dirs:
       src
   pkgconfig-depends:
-      x11
+      openssl
   build-depends:
-      X11
-    , base >=4.7 && <5
+      base >=4.7 && <5
   default-language: Haskell2010

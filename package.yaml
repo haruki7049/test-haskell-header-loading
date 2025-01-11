@@ -1,14 +1,13 @@
-name: test-haskell-gtk
+name: test-haskell-header-loading
 
 verbatim:
   cabal-version: 2.2
 
 dependencies:
   - base >= 4.7 && < 5
-  - X11
 
 pkg-config-dependencies:
-  - x11
+  - openssl
 
 executables:
   test-haskell-gtk:
