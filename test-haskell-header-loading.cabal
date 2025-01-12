@@ -6,6 +6,8 @@ cabal-version: 2.2
 
 name:           test-haskell-header-loading
 version:        0.0.0
+license:        CC0-1.0
+license-file:   LICENSE
 build-type:     Simple
 
 executable test-haskell-gtk

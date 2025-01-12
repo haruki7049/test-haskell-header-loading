@@ -1,4 +1,6 @@
 name: test-haskell-header-loading
+license: CC0-1.0
+license-file: LICENSE
 
 verbatim:
   cabal-version: 2.2
